@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rw_9 – Designer & Skripter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── BACKGROUND LAYERS ── -->
+  <div id="bgBlur"></div>
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- ── INTRO SCREEN ── -->
+  <div id="intro">
+    <div class="intro-inner">
+      <div class="intro-logo">Rw_9</div>
+      <div class="intro-bar"><div class="intro-fill"></div></div>
+      <div class="intro-sub">Designer &amp; Skripter</div>
+    </div>
+  </div>
+
+  <!-- ── MUSIC PLAYER (top) ── -->
+  <div id="player" class="player hidden">
+    <img id="playerCover" src="" alt="Cover" />
+    <div class="player-info">
+      <span id="playerTitle">–</span>
+      <span id="playerArtist">–</span>
+    </div>
+    <div class="player-controls">
+      <button id="btnPrev" title="Vorheriger">&#9664;&#9664;</button>
+      <button id="btnPlay" title="Play/Pause">&#10074;&#10074;</button>
+      <button id="btnNext" title="Nächster">&#9654;&#9654;</button>
+    </div>
+  </div>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="container" id="mainContent">
+    <div class="card" id="mainCard">
+
+      <!-- Profile -->
+      <div class="profile-section">
+        <div class="avatar-wrapper">
+          <img src="avatar.jpg" alt="Rw_9" class="avatar" />
+          <div class="verified-badge" title="Verifiziert">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 12l2 2 4-4M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-.803 3.536 3.745 3.745 0 01-3.536.803A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 01-3.536-.803 3.745 3.745 0 01-.803-3.536A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 01.803-3.536 3.745 3.745 0 013.536-.803A3.745 3.745 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 013.536.803 3.745 3.745 0 01.803 3.536A3.745 3.745 0 0121 12z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="avatar-glow"></div>
+        </div>
+        <h1 class="username">Rw_9</h1>
+        <p class="tagline">— DESIGNER &amp; SKRIPTER —</p>
+      </div>
+
+      <!-- Links -->
+      <div class="links" id="links">
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@Rw9.36" class="link-btn" data-color="#FF0000" target="_blank" rel="noopener noreferrer">
+          <div class="link-icon" style="background:#FF0000;">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">YouTube</span>
+            <span class="link-desc">Videos & Content</span>
+          </div>
+          <div class="link-arrow">↗</div>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@drag2832" class="link-btn" data-color="#010101" target="_blank" rel="noopener noreferrer">
+          <div class="link-icon" style="background:#010101; border:1px solid #333;">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 01-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 01-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 013.183-4.51v-3.5a6.329 6.329 0 00-5.394 10.692 6.33 6.33 0 0010.857-4.424V8.687a8.182 8.182 0 004.773 1.526V6.79a4.831 4.831 0 01-1.003-.104z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">TikTok</span>
+            <span class="link-desc">Kurze Clips & Highlights</span>
+          </div>
+          <div class="link-arrow">↗</div>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/Rw967" class="link-btn" data-color="#333" target="_blank" rel="noopener noreferrer">
+          <div class="link-icon" style="background:#24292e;">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">GitHub</span>
+            <span class="link-desc">Code & Skripte</span>
+          </div>
+          <div class="link-arrow">↗</div>
+        </a>
+
+        <!-- Spotify -->
+        <a href="https://open.spotify.com/user/31v3iabsl2d52hcwpocvnbix2oqe" class="link-btn" data-color="#1DB954" target="_blank" rel="noopener noreferrer">
+          <div class="link-icon" style="background:#1DB954;">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">Spotify</span>
+            <span class="link-desc">Meine Playlist</span>
+          </div>
+          <div class="link-arrow">↗</div>
+        </a>
+
+        <!-- Discord -->
+        <a href="https://discord.gg/kq3aS7f4P" class="link-btn" data-color="#5865F2" target="_blank" rel="noopener noreferrer">
+          <div class="link-icon" style="background:#5865F2;">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.445.865-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">Discord</span>
+            <span class="link-desc">Community & Kontakt</span>
+          </div>
+          <div class="link-arrow">↗</div>
+        </a>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <button class="footer-btn" id="datenschutzBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 12c0 2.898 1.028 5.552 2.724 7.615a11.955 11.955 0 006.276 3.329c.248.044.499.066.75.066.251 0 .502-.022.75-.066a11.955 11.955 0 006.276-3.329A11.955 11.955 0 0021 12c0-1.912-.447-3.719-1.241-5.321A11.968 11.968 0 0012 3.75a11.93 11.93 0 00-3 .214z"/></svg>
+          Datenschutz &amp; Haftung
+        </button>
+        <div class="copyright">
+          <p>© 2026 Rw_9</p>
+          <p class="dimmed">Designer &amp; Skripter &nbsp;·&nbsp; Keine Kooperation mit Rocket League.</p>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ── DATENSCHUTZ MODAL ── -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2>RECHTLICHE HINWEISE</h2>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body custom-scroll">
+        <div class="modal-section">
+          <div class="modal-section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+            Haftung für Inhalte
+          </div>
+          <p>Als Dienstanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Dienstanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+        </div>
+        <div class="modal-section highlight">
+          <div class="modal-section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
+            Haftung für Links
+          </div>
+          <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.</p>
+          <p class="modal-note">Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15"/></svg>
+            Urheberrecht
+          </div>
+          <p>Die durch die Seitenbetreiber erstellten Inhalte unterliegen dem deutschen Urheberrecht. Die Vervielfältigung außerhalb der Grenzen des Urheberrechtes bedarf der schriftlichen Zustimmung des Erstellers.</p>
+        </div>
+      </div>
+      <button class="modal-cta" id="modalOk">VERSTANDEN</button>
+    </div>
+  </div>
+
+  <script src="music.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
