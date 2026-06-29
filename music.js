@@ -27,6 +27,18 @@ const PLAYLIST = [
     src:    'itachi_flow.m4a',
     cover:  'itachi_flow.png',
   },
+  {
+    title:  'GLORY',
+    artist: 'Ogryzek (Phonk)',
+    src:    'glory_phonk.mp3',
+    cover:  'glory_phonk.png',
+  },
+  {
+    title:  'Montagem Lunar Celestia',
+    artist: 'Slowed',
+    src:    'montagem_lunar.mp3',
+    cover:  'montagem_lunar.png',
+  },
 ];
 
 let currentIndex = 0;
@@ -34,20 +46,15 @@ let isPlaying    = false;
 const audio      = new Audio();
 audio.volume     = 0.45;
 
-// DOM refs (resolved after DOMContentLoaded)
 let playerEl, coverEl, titleEl, artistEl, btnPlay, btnPrev, btnNext, bgBlurEl;
 
 function loadTrack(index) {
-  const track   = PLAYLIST[index];
-  audio.src     = track.src;
-  coverEl.src   = track.cover;
+  const track = PLAYLIST[index];
+  audio.src   = track.src;
+  coverEl.src = track.cover;
   titleEl.textContent  = track.title;
   artistEl.textContent = track.artist;
-
-  // Swap blurred background
-  if (bgBlurEl) {
-    bgBlurEl.style.backgroundImage = `url('${track.cover}')`;
-  }
+  if (bgBlurEl) bgBlurEl.style.backgroundImage = `url('${track.cover}')`;
 }
 
 function play() {
@@ -70,7 +77,6 @@ function nextTrack() {
 }
 
 function prevTrack() {
-  // If more than 3s in, restart; otherwise go back
   if (audio.currentTime > 3) {
     audio.currentTime = 0;
   } else {
@@ -82,9 +88,7 @@ function prevTrack() {
 
 function showPlayer() {
   playerEl.classList.remove('hidden');
-  requestAnimationFrame(() => {
-    playerEl.classList.add('visible');
-  });
+  requestAnimationFrame(() => playerEl.classList.add('visible'));
 }
 
 function initMusic() {
@@ -99,23 +103,17 @@ function initMusic() {
 
   loadTrack(currentIndex);
   showPlayer();
-
-  // Auto-play attempt (may be blocked by browser without user interaction)
   play();
 
-  // Auto-next when track ends
   audio.addEventListener('ended', nextTrack);
-
-  // Controls
   btnPlay.addEventListener('click', () => isPlaying ? pause() : play());
   btnNext.addEventListener('click', nextTrack);
   btnPrev.addEventListener('click', prevTrack);
 
-  // Allow play on first user gesture if autoplay was blocked
-  document.addEventListener('click', () => {
-    if (!isPlaying) play();
-  }, { once: true });
+  const volSlider = document.getElementById('volumeSlider');
+  if (volSlider) volSlider.addEventListener('input', () => { audio.volume = volSlider.value / 100; });
+
+  document.addEventListener('click', () => { if (!isPlaying) play(); }, { once: true });
 }
 
-// Export so script.js can call after intro
 window.initMusic = initMusic;
