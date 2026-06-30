@@ -7,7 +7,7 @@ const PLAYLIST = [
     title:  'willpower',
     artist: 'Slowed',
     src:    'willpower.mp3',
-    cover:  'willpower.png',
+    cover:  'willpowerr.png',
   },
   {
     title:  'english or spanish',
