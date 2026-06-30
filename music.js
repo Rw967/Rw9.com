@@ -4,10 +4,16 @@
 
 const PLAYLIST = [
   {
-    title:  'Sprinter',
-    artist: 'Dave & Central Cee',
-    src:    'sprinter.mp3',
-    cover:  'sprinter.png',
+    title:  'willpower',
+    artist: 'Slowed',
+    src:    'willpower.mp3',
+    cover:  'Willpower.png',
+  },
+  {
+    title:  'english or spanish',
+    artist: 'english or spanish ptasinski, RJ Pasin',
+    src:    'english or spanish.mp3',
+    cover:  'english or spanish.png',
   },
   {
     title:  'THE SCOTTS',
@@ -38,6 +44,12 @@ const PLAYLIST = [
     artist: 'Slowed',
     src:    'montagem_lunar.mp3',
     cover:  'montagem_lunar.png',
+  },
+  {
+    title:  'Sprinter',
+    artist: 'Dave & Central Cee',
+    src:    'sprinter.mp3',
+    cover:  'sprinter.png',
   },
 ];
 
